@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
     UnityEditor.EditorApplication.isPlaying = false;
     #elif UNITY_WEBGL
     // Quitting in the WebGL build:
-    Application.OpenURL(Application.absoluteURL); // Reloads the page
+    Application.ExternalEval("window.location.href='about:blank';");
     #else // Standalone or other builds
     // Quitting in all other builds:
     Application.Quit();
